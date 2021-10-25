@@ -76,6 +76,14 @@ class DeletionRecoveryLevel(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum))
     RECOVERABLE = "Recoverable"
     RECOVERABLE_PROTECTED_SUBSCRIPTION = "Recoverable+ProtectedSubscription"
 
+class Enum16(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    RESOURCE_TYPE_EQ_MICROSOFT_KEY_VAULT_VAULTS_ = "resourceType eq 'Microsoft.KeyVault/vaults'"
+
+class Enum17(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    TWO_THOUSAND_FIFTEEN11_01 = "2015-11-01"
+
 class IdentityType(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
     """The type of identity.
     """

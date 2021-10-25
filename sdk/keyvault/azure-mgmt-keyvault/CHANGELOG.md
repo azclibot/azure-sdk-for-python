@@ -1,5 +1,12 @@
 # Release History
 
+## 10.0.0 (2021-10-25)
+
+**Breaking changes**
+
+  - Operation VaultsOperations.list has a new signature
+  - Operation VaultsOperations.list has a new signature
+
 ## 9.2.0 (2021-10-15)
 
 **Features**

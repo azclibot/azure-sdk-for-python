@@ -70,6 +70,14 @@ class DeletionRecoveryLevel(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum))
     RECOVERABLE = "Recoverable"
     RECOVERABLE_PROTECTED_SUBSCRIPTION = "Recoverable+ProtectedSubscription"
 
+class Enum10(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    RESOURCE_TYPE_EQ_MICROSOFT_KEY_VAULT_VAULTS_ = "resourceType eq 'Microsoft.KeyVault/vaults'"
+
+class Enum11(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    TWO_THOUSAND_FIFTEEN11_01 = "2015-11-01"
+
 class JsonWebKeyCurveName(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
     """The elliptic curve name. For valid values, see JsonWebKeyCurveName.
     """

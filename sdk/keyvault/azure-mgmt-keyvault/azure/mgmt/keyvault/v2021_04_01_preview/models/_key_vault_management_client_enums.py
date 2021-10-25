@@ -64,6 +64,14 @@ class CreateMode(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
     RECOVER = "recover"
     DEFAULT = "default"
 
+class Enum12(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    RESOURCE_TYPE_EQ_MICROSOFT_KEY_VAULT_VAULTS_ = "resourceType eq 'Microsoft.KeyVault/vaults'"
+
+class Enum13(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    TWO_THOUSAND_FIFTEEN11_01 = "2015-11-01"
+
 class IdentityType(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
     """The type of identity.
     """

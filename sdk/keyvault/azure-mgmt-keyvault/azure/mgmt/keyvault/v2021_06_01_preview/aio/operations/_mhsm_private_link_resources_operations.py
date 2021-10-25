@@ -44,7 +44,7 @@ class MHSMPrivateLinkResourcesOperations:
         self,
         resource_group_name: str,
         name: str,
-        **kwargs: Any
+        **kwargs
     ) -> "_models.MHSMPrivateLinkResourceListResult":
         """Gets the private link resources supported for the managed hsm pool.
 
