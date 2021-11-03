@@ -62,10 +62,10 @@ class UsagesOperations(object):
            For Microsoft.Network PublicIPAddresses.
         :type resource_name: str
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: CurrentUsagesBase, or the result of cls(response)
@@ -124,10 +124,10 @@ class UsagesOperations(object):
         """Get a list of current usage for all resources for the scope specified.
 
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: An iterator like instance of either UsagesLimits or the result of cls(response)

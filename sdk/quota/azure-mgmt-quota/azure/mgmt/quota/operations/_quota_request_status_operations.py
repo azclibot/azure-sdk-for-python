@@ -59,10 +59,10 @@ class QuotaRequestStatusOperations(object):
         :param id: Quota request ID.
         :type id: str
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: QuotaRequestDetails, or the result of cls(response)
@@ -123,10 +123,10 @@ class QuotaRequestStatusOperations(object):
         time is made. Use the **oData** filter to select quota requests.
 
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :param filter: .. list-table::
             :header-rows: 1

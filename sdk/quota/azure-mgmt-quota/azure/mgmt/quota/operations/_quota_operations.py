@@ -65,10 +65,10 @@ class QuotaOperations(object):
            For Microsoft.Network PublicIPAddresses.
         :type resource_name: str
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: CurrentQuotaLimitBase, or the result of cls(response)
@@ -188,8 +188,8 @@ class QuotaOperations(object):
 
         #. Use the GET operation for quotas and usages to determine how much quota remains for the
         specific resource and to calculate the new quota limit. These steps are detailed in `this
-        example
-        <https://techcommunity.microsoft.com/t5/azure-governance-and-management/using-the-new-quota-rest-api/ba-p/2183670>`_.
+        example <https://techcommunity.microsoft.com/t5/azure-governance-and-management/using-the-new-
+        quota-rest-api/ba-p/2183670>`_.
         #. Use this PUT operation to update the quota limit. Please check the URI in location header
         for the detailed status of the request.
 
@@ -201,17 +201,17 @@ class QuotaOperations(object):
            For Microsoft.Network PublicIPAddresses.
         :type resource_name: str
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :param create_quota_request: Quota request payload.
         :type create_quota_request: ~azure.mgmt.quota.models.CurrentQuotaLimitBase
         :keyword callable cls: A custom type or function that will be passed the direct response
         :keyword str continuation_token: A continuation token to restart a poller from a saved state.
-        :keyword polling: By default, your polling method will be ARMPolling.
-         Pass in False for this operation to not poll, or pass in your own initialized polling object for a personal polling strategy.
+        :keyword polling: Pass in True if you'd like the ARMPolling polling method,
+         False for no polling, or your own initialized polling object for a personal polling strategy.
         :paramtype polling: bool or ~azure.core.polling.PollingMethod
         :keyword int polling_interval: Default waiting time between two polls for LRO operations if no Retry-After header is present.
         :return: An instance of LROPoller that returns either CurrentQuotaLimitBase or the result of cls(response)
@@ -332,8 +332,8 @@ class QuotaOperations(object):
 
         #. Use the Usages-GET and Quota-GET operations to determine the remaining quota for the
         specific resource and to calculate the new quota limit. These steps are detailed in `this
-        example
-        <https://techcommunity.microsoft.com/t5/azure-governance-and-management/using-the-new-quota-rest-api/ba-p/2183670>`_.
+        example <https://techcommunity.microsoft.com/t5/azure-governance-and-management/using-the-new-
+        quota-rest-api/ba-p/2183670>`_.
         #. Use this PUT operation to update the quota limit. Please check the URI in location header
         for the detailed status of the request.
 
@@ -345,17 +345,17 @@ class QuotaOperations(object):
            For Microsoft.Network PublicIPAddresses.
         :type resource_name: str
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :param create_quota_request: Quota requests payload.
         :type create_quota_request: ~azure.mgmt.quota.models.CurrentQuotaLimitBase
         :keyword callable cls: A custom type or function that will be passed the direct response
         :keyword str continuation_token: A continuation token to restart a poller from a saved state.
-        :keyword polling: By default, your polling method will be ARMPolling.
-         Pass in False for this operation to not poll, or pass in your own initialized polling object for a personal polling strategy.
+        :keyword polling: Pass in True if you'd like the ARMPolling polling method,
+         False for no polling, or your own initialized polling object for a personal polling strategy.
         :paramtype polling: bool or ~azure.core.polling.PollingMethod
         :keyword int polling_interval: Default waiting time between two polls for LRO operations if no Retry-After header is present.
         :return: An instance of LROPoller that returns either CurrentQuotaLimitBase or the result of cls(response)
@@ -417,10 +417,10 @@ class QuotaOperations(object):
         this GET operation can be leveraged to submit requests to update a quota.
 
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: An iterator like instance of either QuotaLimits or the result of cls(response)

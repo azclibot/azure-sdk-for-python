@@ -6,7 +6,7 @@
 # Changes may cause incorrect behavior and will be lost if the code is regenerated.
 # --------------------------------------------------------------------------
 
-from typing import Any, List, Optional, Union
+from typing import List, Optional, Union
 
 from azure.core.exceptions import HttpResponseError
 import msrest.serialization
@@ -178,7 +178,7 @@ class LimitJsonObject(msrest.serialization.Model):
     """LimitJson abstract class.
 
     You probably want to use the sub-classes and not this class directly. Known
-    sub-classes are: LimitValue.
+    sub-classes are: LimitObject.
 
     All required parameters must be populated in order to send to Azure.
 
@@ -196,7 +196,7 @@ class LimitJsonObject(msrest.serialization.Model):
     }
 
     _subtype_map = {
-        'limit_object_type': {'LimitValue': 'LimitValue'}
+        'limit_object_type': {'LimitValue': 'LimitObject'}
     }
 
     def __init__(
@@ -207,27 +207,29 @@ class LimitJsonObject(msrest.serialization.Model):
         self.limit_object_type = None  # type: Optional[str]
 
 
-class LimitObject(msrest.serialization.Model):
+class LimitObject(LimitJsonObject):
     """The resource quota limit value.
 
     All required parameters must be populated in order to send to Azure.
 
+    :param limit_object_type: Required. The limit object type.Constant filled by server.  Possible
+     values include: "LimitValue".
+    :type limit_object_type: str or ~azure.mgmt.quota.models.LimitType
     :param value: Required. The quota/limit value.
     :type value: int
-    :param limit_object_type: The limit object type. Possible values include: "LimitValue".
-    :type limit_object_type: str or ~azure.mgmt.quota.models.LimitType
     :param limit_type: The quota or usages limit types. Possible values include: "Independent",
      "Shared".
     :type limit_type: str or ~azure.mgmt.quota.models.QuotaLimitTypes
     """
 
     _validation = {
+        'limit_object_type': {'required': True},
         'value': {'required': True},
     }
 
     _attribute_map = {
-        'value': {'key': 'value', 'type': 'int'},
         'limit_object_type': {'key': 'limitObjectType', 'type': 'str'},
+        'value': {'key': 'value', 'type': 'int'},
         'limit_type': {'key': 'limitType', 'type': 'str'},
     }
 
@@ -235,54 +237,13 @@ class LimitObject(msrest.serialization.Model):
         self,
         *,
         value: int,
-        limit_object_type: Optional[Union[str, "LimitType"]] = None,
         limit_type: Optional[Union[str, "QuotaLimitTypes"]] = None,
         **kwargs
     ):
         super(LimitObject, self).__init__(**kwargs)
-        self.value = value
-        self.limit_object_type = limit_object_type
-        self.limit_type = limit_type
-
-
-class LimitValue(LimitJsonObject, LimitObject):
-    """The resource quota limit.
-
-    All required parameters must be populated in order to send to Azure.
-
-    :param value: Required. The quota/limit value.
-    :type value: int
-    :param limit_type: The quota or usages limit types. Possible values include: "Independent",
-     "Shared".
-    :type limit_type: str or ~azure.mgmt.quota.models.QuotaLimitTypes
-    :param limit_object_type: Required. The limit object type.Constant filled by server.  Possible
-     values include: "LimitValue".
-    :type limit_object_type: str or ~azure.mgmt.quota.models.LimitType
-    """
-
-    _validation = {
-        'value': {'required': True},
-        'limit_object_type': {'required': True},
-    }
-
-    _attribute_map = {
-        'value': {'key': 'value', 'type': 'int'},
-        'limit_type': {'key': 'limitType', 'type': 'str'},
-        'limit_object_type': {'key': 'limitObjectType', 'type': 'str'},
-    }
-
-    def __init__(
-        self,
-        *,
-        value: int,
-        limit_type: Optional[Union[str, "QuotaLimitTypes"]] = None,
-        **kwargs
-    ):
-        super(LimitValue, self).__init__(value=value, limit_type=limit_type, **kwargs)
+        self.limit_object_type = 'LimitValue'  # type: str
         self.value = value
         self.limit_type = limit_type
-        self.limit_object_type = 'LimitValue'  # type: str
-        self.limit_object_type = 'LimitValue'  # type: str
 
 
 class OperationDisplay(msrest.serialization.Model):
@@ -456,7 +417,7 @@ class QuotaProperties(msrest.serialization.Model):
     :ivar is_quota_applicable: States if quota can be requested for this resource.
     :vartype is_quota_applicable: bool
     :param properties: Additional properties for the specific resource provider.
-    :type properties: any
+    :type properties: str
     """
 
     _validation = {
@@ -472,7 +433,7 @@ class QuotaProperties(msrest.serialization.Model):
         'resource_type': {'key': 'resourceType', 'type': 'str'},
         'quota_period': {'key': 'quotaPeriod', 'type': 'str'},
         'is_quota_applicable': {'key': 'isQuotaApplicable', 'type': 'bool'},
-        'properties': {'key': 'properties', 'type': 'object'},
+        'properties': {'key': 'properties', 'type': 'str'},
     }
 
     def __init__(
@@ -481,7 +442,7 @@ class QuotaProperties(msrest.serialization.Model):
         limit: Optional["LimitJsonObject"] = None,
         name: Optional["ResourceName"] = None,
         resource_type: Optional[str] = None,
-        properties: Optional[Any] = None,
+        properties: Optional[str] = None,
         **kwargs
     ):
         super(QuotaProperties, self).__init__(**kwargs)
@@ -626,7 +587,7 @@ class QuotaRequestOneResourceSubmitResponse(msrest.serialization.Model):
     :param error: Error details of the quota request.
     :type error: ~azure.mgmt.quota.models.ServiceErrorDetail
     :param properties: Additional properties for the specific resource provider.
-    :type properties: any
+    :type properties: str
     """
 
     _validation = {
@@ -656,7 +617,7 @@ class QuotaRequestOneResourceSubmitResponse(msrest.serialization.Model):
         'quota_period': {'key': 'properties.quotaPeriod', 'type': 'str'},
         'is_quota_applicable': {'key': 'properties.isQuotaApplicable', 'type': 'bool'},
         'error': {'key': 'properties.error', 'type': 'ServiceErrorDetail'},
-        'properties': {'key': 'properties.properties', 'type': 'object'},
+        'properties': {'key': 'properties.properties', 'type': 'str'},
     }
 
     def __init__(
@@ -667,7 +628,7 @@ class QuotaRequestOneResourceSubmitResponse(msrest.serialization.Model):
         name_properties_name: Optional["ResourceName"] = None,
         resource_type: Optional[str] = None,
         error: Optional["ServiceErrorDetail"] = None,
-        properties: Optional[Any] = None,
+        properties: Optional[str] = None,
         **kwargs
     ):
         super(QuotaRequestOneResourceSubmitResponse, self).__init__(**kwargs)
@@ -783,9 +744,8 @@ class QuotaRequestSubmitResponse202(msrest.serialization.Model):
     Variables are only populated by the server, and will be ignored when sending a request.
 
     :ivar id: The quota request ID. To check the request status, use the **id** value in a `Quota
-     Request Status
-     <https://docs.microsoft.com/en-us/rest/api/reserved-vm-instances/quotarequeststatus/get>`_ GET
-     operation.
+     Request Status <https://docs.microsoft.com/en-us/rest/api/reserved-vm-
+     instances/quotarequeststatus/get>`_ GET operation.
     :vartype id: str
     :ivar name: Operation ID.
     :vartype name: str
@@ -813,7 +773,7 @@ class QuotaRequestSubmitResponse202(msrest.serialization.Model):
      This parameter is optional because, for some resources like compute, the period is irrelevant.
     :vartype quota_period: str
     :param properties: Additional properties for the specific resource provider.
-    :type properties: any
+    :type properties: str
     """
 
     _validation = {
@@ -836,7 +796,7 @@ class QuotaRequestSubmitResponse202(msrest.serialization.Model):
         'name_properties_name': {'key': 'properties.name', 'type': 'ResourceName'},
         'resource_type': {'key': 'properties.resourceType', 'type': 'str'},
         'quota_period': {'key': 'properties.quotaPeriod', 'type': 'str'},
-        'properties': {'key': 'properties.properties', 'type': 'object'},
+        'properties': {'key': 'properties.properties', 'type': 'str'},
     }
 
     def __init__(
@@ -846,7 +806,7 @@ class QuotaRequestSubmitResponse202(msrest.serialization.Model):
         unit: Optional[str] = None,
         name_properties_name: Optional["ResourceName"] = None,
         resource_type: Optional[str] = None,
-        properties: Optional[Any] = None,
+        properties: Optional[str] = None,
         **kwargs
     ):
         super(QuotaRequestSubmitResponse202, self).__init__(**kwargs)
@@ -1101,7 +1061,7 @@ class UsagesProperties(msrest.serialization.Model):
     :ivar is_quota_applicable: States if quota can be requested for this resource.
     :vartype is_quota_applicable: bool
     :param properties: Additional properties for the specific resource provider.
-    :type properties: any
+    :type properties: str
     """
 
     _validation = {
@@ -1117,7 +1077,7 @@ class UsagesProperties(msrest.serialization.Model):
         'resource_type': {'key': 'resourceType', 'type': 'str'},
         'quota_period': {'key': 'quotaPeriod', 'type': 'str'},
         'is_quota_applicable': {'key': 'isQuotaApplicable', 'type': 'bool'},
-        'properties': {'key': 'properties', 'type': 'object'},
+        'properties': {'key': 'properties', 'type': 'str'},
     }
 
     def __init__(
@@ -1126,7 +1086,7 @@ class UsagesProperties(msrest.serialization.Model):
         usages: Optional["UsagesObject"] = None,
         name: Optional["ResourceName"] = None,
         resource_type: Optional[str] = None,
-        properties: Optional[Any] = None,
+        properties: Optional[str] = None,
         **kwargs
     ):
         super(UsagesProperties, self).__init__(**kwargs)

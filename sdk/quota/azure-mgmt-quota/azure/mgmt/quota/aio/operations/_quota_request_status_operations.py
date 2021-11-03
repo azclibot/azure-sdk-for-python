@@ -45,7 +45,7 @@ class QuotaRequestStatusOperations:
         self,
         id: str,
         scope: str,
-        **kwargs: Any
+        **kwargs
     ) -> "_models.QuotaRequestDetails":
         """Get the quota request details and status by quota request ID for the resources of the resource
         provider at a specific location. The quota request ID **id** is returned in the response of the
@@ -54,10 +54,10 @@ class QuotaRequestStatusOperations:
         :param id: Quota request ID.
         :type id: str
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: QuotaRequestDetails, or the result of cls(response)
@@ -111,16 +111,16 @@ class QuotaRequestStatusOperations:
         filter: Optional[str] = None,
         top: Optional[int] = None,
         skiptoken: Optional[str] = None,
-        **kwargs: Any
+        **kwargs
     ) -> AsyncIterable["_models.QuotaRequestDetailsList"]:
         """For the specified scope, get the current quota requests for a one year period ending at the
         time is made. Use the **oData** filter to select quota requests.
 
         :param scope: The target Azure resource URI. For example,
-         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-test/providers/Microsoft.Batch/batchAccounts/testAccount/``.
-         This is the target Azure resource URI for the List GET operation. If a ``{resourceName}`` is
-         added after ``/quotas``\ , then it's the target Azure resource URI in the GET operation for the
-         specific resource.
+         ``/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/qms-
+         test/providers/Microsoft.Batch/batchAccounts/testAccount/``. This is the target Azure resource
+         URI for the List GET operation. If a ``{resourceName}`` is added after ``/quotas``\ , then it's
+         the target Azure resource URI in the GET operation for the specific resource.
         :type scope: str
         :param filter: .. list-table::
             :header-rows: 1
